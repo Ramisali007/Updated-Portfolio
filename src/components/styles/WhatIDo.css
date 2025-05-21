@@ -1,0 +1,470 @@
+.whatIDO {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  place-items: center;
+  position: relative;
+  opacity: 1;
+  min-height: 100vh;
+  width: 100%;
+  max-width: var(--cWidth);
+  margin: auto;
+  z-index: 9;
+  padding: 50px 20px;
+}
+.what-box {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 9;
+}
+.what-box h2 {
+  font-size: calc(4vw + 25px);
+  line-height: calc(4vw + 20px);
+  font-weight: 600;
+  margin-right: 10%;
+  margin-bottom: 100px;
+}
+
+.what-word {
+  font-style: italic;
+  white-space: nowrap;
+  display: inline-block;
+}
+.do-h2 {
+  color: var(--accentColor);
+}
+.what-box-in {
+  flex-direction: column;
+  height: 500px;
+  margin-left: 50px; /* Added margin to move content to the right */
+  position: relative;
+  display: flex;
+}
+.what-content {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  min-height: 50%;
+  transition: 0.5s;
+  position: relative;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: rgba(11, 8, 12, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.what-noTouch:hover,
+.what-content-active {
+  min-height: auto;
+  padding: 35px;
+  z-index: 10; /* Ensure it appears above other elements */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Skills are always visible now */
+
+.what-noTouch:hover ~ .what-content,
+.what-box-in:hover .what-noTouch:not(:hover),
+.what-content.what-sibling {
+  min-height: 33%;
+  padding: 10px 50px;
+}
+.what-content h3 {
+  font-size: 35px;
+  letter-spacing: 1px;
+  margin: 0;
+  color: var(--accentColor);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.what-content p {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  color: rgba(255, 255, 255, 0.9);
+}
+.what-content h4 {
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin: 0px;
+  font-size: 14px;
+  opacity: 0.5;
+}
+.what-content-in {
+  opacity: 0;
+  animation: whatFlicker 0.5s 1 forwards;
+  animation-delay: 1s;
+}
+@keyframes whatFlicker {
+  0%,
+  25%,
+  35%,
+  60% {
+    opacity: 0;
+  }
+
+  30%,
+  50%,
+  40%,
+  100% {
+    opacity: 1;
+  }
+}
+.what-content::before,
+.what-corner::before,
+.what-content::after,
+.what-corner::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 0;
+  animation: whatCorners 0.2s 1 forwards;
+  animation-delay: 0.5s;
+}
+@keyframes whatCorners {
+  100% {
+    opacity: 1;
+  }
+}
+.what-content::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+.what-corner::before {
+  top: -2px;
+  right: -2px;
+  border-left: none;
+  border-bottom: none;
+}
+.what-content::after {
+  bottom: -2px;
+  left: -2px;
+  border-top: none;
+  border-right: none;
+}
+.what-corner::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+.what-arrow {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #fff;
+}
+.what-arrow::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  transition: 0.5s;
+  width: 10px;
+  height: 10px;
+}
+.what-noTouch:hover .what-arrow::before,
+.what-content-active .what-arrow::before {
+  transform: translate(-50%, -20%) rotate(-225deg);
+}
+.what-border1 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  transition: 0.5s;
+  max-width: 0%;
+  overflow: hidden;
+  opacity: 0.8;
+  animation: whatBorders 1.2s 1 forwards;
+}
+.what-border1 svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 450px;
+}
+.what-border2 {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 100%;
+  max-height: 0%;
+  overflow: hidden;
+  transition: 0.5s;
+  opacity: 0.8;
+  animation: whatBorders 1.2s 1 forwards;
+}
+.what-border2 svg {
+  height: 500px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+.what-content-in {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.what-content-in h5 {
+  font-weight: 500;
+  opacity: 1;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 8px;
+  margin-top: 15px;
+  color: var(--accentColor);
+  visibility: visible;
+}
+@keyframes whatBorders {
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    max-height: 100%;
+    max-width: 100%;
+    opacity: 0.2;
+  }
+}
+.what-content-flex {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  opacity: 1;
+  visibility: visible;
+}
+.what-tags {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px 12px;
+  background-color: rgba(194, 164, 255, 0.2);
+  border: 1px solid rgba(194, 164, 255, 0.4);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  margin-bottom: 6px;
+}
+.what-tags:hover {
+  background-color: rgba(194, 164, 255, 0.3);
+  border-color: var(--accentColor);
+  transform: translateY(-2px);
+}
+
+/* Added visible class for JavaScript toggling */
+.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+@media only screen and (max-width: 1600px) {
+  .what-box h2 {
+    margin-right: 18%;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .what-box h2 {
+    margin-right: 20%;
+  }
+  .what-box-in {
+    height: 400px;
+  }
+  .what-content h3 {
+    font-size: 28px;
+  }
+  .what-content {
+    padding: 30px;
+    width: 400px;
+  }
+  .what-content p {
+    font-size: 13px;
+  }
+  .what-noTouch:hover,
+  .what-content-active {
+    padding: 20px 30px;
+  }
+
+  .what-noTouch:hover ~ .what-content,
+  .what-box-in:hover .what-noTouch:not(:hover),
+  .what-content.what-sibling {
+    padding: 10px 30px;
+  }
+  .what-tags {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .what-box-in {
+    margin-left: 70px; /* Increased margin for better positioning */
+  }
+  .what-content {
+    width: 380px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .whatIDO {
+    height: auto;
+    padding: 50px 0px;
+    padding-bottom: 50px;
+  }
+  .what-box-in {
+    height: 500px;
+    margin-left: 0; /* Reset margin for mobile view */
+  }
+  .what-content {
+    padding: 50px;
+    width: 500px;
+  }
+  .what-content p {
+    font-size: 14px;
+  }
+  .what-noTouch:hover,
+  .what-content-active {
+    min-height: auto;
+    padding: 35px;
+    transform: translateY(-5px);
+  }
+
+  .what-noTouch:hover ~ .what-content,
+  .what-box-in:hover .what-noTouch:not(:hover),
+  .what-content.what-sibling {
+    min-height: 33%;
+    padding: 10px 50px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .whatIDO {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  .what-box h2 {
+    margin: 30px 0;
+    font-size: 55px;
+    line-height: 53px;
+    text-align: center;
+  }
+  .what-box:first-child {
+    justify-content: center;
+  }
+  .what-box:last-child {
+    height: auto;
+  }
+  .what-box {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+  }
+  .what-content {
+    width: 100%;
+    max-width: 100%;
+  }
+  .what-box-in {
+    margin-left: 0px;
+    height: auto;
+    min-height: 450px;
+  }
+  /* Mobile styles already handled by the main styles */
+  .what-content {
+    padding: 30px;
+    margin-bottom: 15px;
+  }
+  .what-content p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .what-noTouch:hover,
+  .what-content-active {
+    padding: 25px;
+    transform: translateY(-5px);
+  }
+  .what-tags {
+    font-size: 12px;
+  }
+
+  .what-noTouch:hover ~ .what-content,
+  .what-box-in:hover .what-noTouch:not(:hover),
+  .what-content.what-sibling {
+    padding: 10px 30px;
+  }
+  .what-content h3 {
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .whatIDO {
+    place-items: inherit;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+  }
+  .what-box {
+    max-width: 100%;
+    margin: 0;
+    width: 100%;
+  }
+  .what-box h2 {
+    font-size: 45px;
+    line-height: 43px;
+    text-align: center;
+    margin: 30px 0;
+  }
+  .what-content {
+    max-width: 100%;
+    padding: 25px;
+  }
+  .what-content h3 {
+    font-size: 22px;
+  }
+  .what-content p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .what-tags {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .what-box h2 {
+    font-size: 38px;
+    line-height: 36px;
+  }
+  .what-content {
+    padding: 20px;
+  }
+  .what-content h3 {
+    font-size: 20px;
+  }
+  .what-content p {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .what-box-in {
+    height: 450px;
+  }
+}
+
+@media only screen and (min-width: 1950px) {
+  .what-box h2 {
+    font-size: 7rem;
+    line-height: 6.8rem;
+  }
+}
