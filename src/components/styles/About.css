@@ -1,0 +1,124 @@
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  place-items: center;
+  position: relative;
+  opacity: 1;
+  height: auto;
+  width: 100%;
+  max-width: var(--cWidth);
+  margin: auto;
+  padding: 20px 10px;
+}
+
+@media only screen and (max-width: 480px) {
+  .about-me {
+    width: 95%;
+    padding: 30px 0px;
+  }
+  .about-me h3 {
+    font-size: 22px;
+    letter-spacing: 5px;
+  }
+  .about-me p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+.about-me {
+  padding: 50px 0px;
+  padding-bottom: 0;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.about-me h3 {
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-weight: 400;
+  color: var(--accentColor);
+  margin-bottom: 20px;
+}
+
+.about-me p {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.8px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (min-width: 600px) {
+  .about-section {
+    justify-content: center;
+  }
+  .about-me {
+    width: 85%;
+    max-width: 550px;
+  }
+  .about-me p {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .about-me {
+    width: 80%;
+    max-width: 600px;
+    transform: translateY(0%);
+  }
+  .about-section {
+    opacity: 1;
+  }
+  .about-me p {
+    font-size: 26px;
+    line-height: 34px;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .about-section {
+    width: var(--cWidth);
+    justify-content: right;
+    max-width: 1920px;
+    height: var(--vh);
+    padding: 0px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+  }
+  .about-me {
+    padding: 0px;
+    width: 50%;
+    max-width: 700px;
+    margin-right: 5%;
+    margin-left: auto;
+  }
+  .about-me h3 {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+  .about-me p {
+    font-size: 28px;
+    line-height: 36px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    max-width: 95%;
+  }
+}
+@media only screen and (min-width: 1950px) {
+  .about-me {
+    max-width: 800px;
+  }
+  .about-me h3 {
+    font-size: 32px;
+  }
+  .about-me p {
+    font-size: 32px;
+    line-height: 42px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
