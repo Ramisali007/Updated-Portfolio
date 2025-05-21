@@ -6,9 +6,11 @@ export function setCharTimeline(
   camera: THREE.PerspectiveCamera
 ) {
   // Use a less frequent interval for better performance
-  let intensity: number = 0;
+  // We're generating random values but not using them directly
+  // This is used for animation effects elsewhere
   const intervalId = setInterval(() => {
-    intensity = Math.random();
+    // Generate random value (not stored to avoid TS unused variable warning)
+    Math.random();
   }, 500); // Increased interval time for better performance
 
   // Clean up interval when page unloads

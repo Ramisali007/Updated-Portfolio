@@ -155,7 +155,7 @@ export default WhatIDo;
 
 function handleClick(container: HTMLDivElement) {
   // Toggle active state for the clicked container
-  const isActive = container.classList.contains("what-content-active");
+  // Check if container is active (not using the variable to avoid TS error)
   container.classList.toggle("what-content-active");
   container.classList.remove("what-sibling");
 

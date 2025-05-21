@@ -13,6 +13,9 @@ const setLighting = (scene: THREE.Scene) => {
   directionalLight.shadow.camera.far = 50;
   scene.add(directionalLight);
 
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0);
+  scene.add(ambientLight);
+
   const pointLight = new THREE.PointLight(0xc2a4ff, 0, 100, 3);
   pointLight.position.set(3, 12, 4);
   pointLight.castShadow = true;
