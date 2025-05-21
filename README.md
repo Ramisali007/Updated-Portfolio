@@ -1,5 +1,5 @@
 # Ramis Ali - Interactive Portfolio Website 🚀 (2025)
-[Portfolio Preview](https://github.com/Ramisali007/Updated-Portfolio/assets/7505980/3c4557e7-6392-4928-b8a9-7b2476ef4edd)
+![Portfolio Preview](https://github.com/Ramisali007/Updated-Portfolio/assets/7505980/3c4557e7-6392-4928-b8a9-7b2476ef4edd)
 Welcome to my interactive portfolio website repository! This project showcases my skills, projects, and professional journey as a software engineer specializing in full-stack development, machine learning, and cybersecurity.
 
 ## 🌟 Features
